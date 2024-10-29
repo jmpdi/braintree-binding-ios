@@ -4,9 +4,9 @@
 		<OutputType>Exe</OutputType>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>true</ImplicitUsings>
-		<SupportedOSPlatformVersion>14.0</SupportedOSPlatformVersion>
 		<UseMauiEssentials>true</UseMauiEssentials>
-		<SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
+		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
+		<SupportedOSPlatformVersion>14.0</SupportedOSPlatformVersion>
 		<AssemblyName>biz.zipline.sample.braintreebinding</AssemblyName>
 		<ApplicationId>biz.zipline.sample.braintreebinding</ApplicationId>
 	</PropertyGroup>
