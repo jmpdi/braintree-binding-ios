@@ -27,4 +27,8 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\Binding\Binding.csproj" />
 	</ItemGroup>
+	
+	<ItemGroup>
+	  <PackageReference Update="Microsoft.Maui.Essentials" Version="8.0.92" />
+	</ItemGroup>
 </Project>
