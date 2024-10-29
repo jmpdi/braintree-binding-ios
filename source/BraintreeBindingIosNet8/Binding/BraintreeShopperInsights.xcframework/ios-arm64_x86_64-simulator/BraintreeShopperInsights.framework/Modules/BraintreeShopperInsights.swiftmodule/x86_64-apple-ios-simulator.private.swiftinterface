@@ -1,0 +1,57 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target x86_64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BraintreeShopperInsights
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import BraintreeCore
+import Foundation
+import PassKit
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct BTShopperInsightsRequest {
+  public init(email: Swift.String, phone: BraintreeShopperInsights.Phone)
+  public init(email: Swift.String)
+  public init(phone: BraintreeShopperInsights.Phone)
+}
+public struct Phone : Swift.Encodable {
+  public init(countryCode: Swift.String, nationalNumber: Swift.String)
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public enum BTShopperInsightsError : Swift.Int, Swift.Error, Foundation.CustomNSError, Foundation.LocalizedError, Swift.Equatable {
+  case emptyBodyReturned
+  case invalidAuthorization
+  public static var errorDomain: Swift.String {
+    get
+  }
+  public var errorCode: Swift.Int {
+    get
+  }
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public class BTShopperInsightsClient {
+  public init(apiClient: BraintreeCore.BTAPIClient)
+  #if compiler(>=5.3) && $AsyncAwait
+  public func getRecommendedPaymentMethods(request: BraintreeShopperInsights.BTShopperInsightsRequest) async throws -> BraintreeShopperInsights.BTShopperInsightsResult
+  #endif
+  public func sendPayPalPresentedEvent()
+  public func sendPayPalSelectedEvent()
+  public func sendVenmoPresentedEvent()
+  public func sendVenmoSelectedEvent()
+  @objc deinit
+}
+public struct BTShopperInsightsResult {
+  public var isPayPalRecommended: Swift.Bool
+  public var isVenmoRecommended: Swift.Bool
+  public var isEligibleInPayPalNetwork: Swift.Bool
+}
+extension BraintreeShopperInsights.BTShopperInsightsError : Swift.Hashable {}
+extension BraintreeShopperInsights.BTShopperInsightsError : Swift.RawRepresentable {}

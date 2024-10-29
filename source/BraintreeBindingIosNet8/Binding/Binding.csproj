@@ -1,0 +1,88 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0-ios</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>true</ImplicitUsings>
+		<IsBindingProject>true</IsBindingProject>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<NativeReference Include="CardinalMobile.xcframework">
+			<Kind>Framework</Kind>
+			<Frameworks>Foundation UIKit</Frameworks>
+			<SmartLink>False</SmartLink>
+			<ForceLoad>True</ForceLoad>
+		</NativeReference>
+		<NativeReference Include="PPRiskMagnes.xcframework">
+			<Kind>Framework</Kind>
+			<Frameworks>Foundation UIKit</Frameworks>
+			<SmartLink>False</SmartLink>
+			<ForceLoad>True</ForceLoad>
+		</NativeReference>
+		<NativeReference Include="BraintreeAmericanExpress.xcframework">
+			<Kind>Framework</Kind>
+			<Frameworks>BraintreeCore</Frameworks>
+			<SmartLink>False</SmartLink>
+			<ForceLoad>True</ForceLoad>
+		</NativeReference>
+		<NativeReference Include="BraintreeApplePay.xcframework">
+			<Kind>Framework</Kind>
+			<Frameworks>BraintreeCore</Frameworks>
+			<SmartLink>False</SmartLink>
+			<ForceLoad>True</ForceLoad>
+		</NativeReference>
+		<NativeReference Include="BraintreeCard.xcframework">
+			<Kind>Framework</Kind>
+			<Frameworks>BraintreeCore</Frameworks>
+			<SmartLink>False</SmartLink>
+			<ForceLoad>True</ForceLoad>
+		</NativeReference>
+		<NativeReference Include="BraintreeCore.xcframework">
+			<Kind>Framework</Kind>
+			<Frameworks>AuthenticationServices Foundation</Frameworks>
+			<SmartLink>False</SmartLink>
+			<ForceLoad>True</ForceLoad>
+		</NativeReference>
+		<NativeReference Include="BraintreeDataCollector.xcframework">
+			<Kind>Framework</Kind>
+			<Frameworks>PPRiskMagnes BraintreeCore</Frameworks>
+			<SmartLink>False</SmartLink>
+			<ForceLoad>True</ForceLoad>
+		</NativeReference>
+		<NativeReference Include="BraintreeLocalPayment.xcframework">
+			<Kind>Framework</Kind>
+			<Frameworks>PPRiskMagnes BraintreeCore BraintreeDataCollector</Frameworks>
+			<SmartLink>False</SmartLink>
+			<ForceLoad>True</ForceLoad>
+		</NativeReference>
+		<NativeReference Include="BraintreePayPal.xcframework">
+			<Kind>Framework</Kind>
+			<Frameworks>Foundation PPRiskMagnes BraintreeCore BraintreeDataCollector</Frameworks>
+			<SmartLink>False</SmartLink>
+			<ForceLoad>True</ForceLoad>
+		</NativeReference>
+		<NativeReference Include="BraintreeShopperInsights.xcframework">
+			<Kind>Framework</Kind>
+			<Frameworks>Foundation BraintreeCore</Frameworks>
+			<SmartLink>False</SmartLink>
+			<ForceLoad>True</ForceLoad>
+		</NativeReference>
+		<NativeReference Include="BraintreeThreeDSecure.xcframework">
+			<Kind>Framework</Kind>
+			<Frameworks>Foundation CardinalMobile PPRiskMagnes BraintreeCore BraintreeCard</Frameworks>
+			<SmartLink>False</SmartLink>
+			<ForceLoad>True</ForceLoad>
+		</NativeReference>
+		<NativeReference Include="BraintreeVenmo.xcframework">
+			<Kind>Framework</Kind>
+			<Frameworks>Foundation BraintreeCore</Frameworks>
+			<SmartLink>False</SmartLink>
+			<ForceLoad>True</ForceLoad>
+		</NativeReference>
+	</ItemGroup>
+	
+	<ItemGroup>
+		<ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+		<ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+	</ItemGroup>
+</Project>

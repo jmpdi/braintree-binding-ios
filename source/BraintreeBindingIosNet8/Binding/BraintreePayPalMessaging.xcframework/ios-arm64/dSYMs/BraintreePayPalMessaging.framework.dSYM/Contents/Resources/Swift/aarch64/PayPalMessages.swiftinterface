@@ -1,0 +1,299 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PayPalMessages
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import DeveloperToolsSupport
+import Foundation
+import SafariServices
+import Swift
+import SwiftUI
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class PayPalMessageView : UIKit.UIControl {
+  public typealias Proxy<T> = PayPalMessages.AnyProxy<PayPalMessages.PayPalMessageView, T>
+  @PayPalMessages.PayPalMessageView.Proxy @_Concurrency.MainActor(unsafe) final public var stateDelegate: (any PayPalMessages.PayPalMessageViewStateDelegate)? {
+    get
+    set
+    _modify
+  }
+  @PayPalMessages.PayPalMessageView.Proxy @_Concurrency.MainActor(unsafe) final public var eventDelegate: (any PayPalMessages.PayPalMessageViewEventDelegate)? {
+    get
+    set
+    _modify
+  }
+  @PayPalMessages.PayPalMessageView.Proxy @_Concurrency.MainActor(unsafe) final public var clientID: Swift.String {
+    get
+    set
+    _modify
+  }
+  @PayPalMessages.PayPalMessageView.Proxy @_Concurrency.MainActor(unsafe) final public var merchantID: Swift.String? {
+    get
+    set
+    _modify
+  }
+  @PayPalMessages.PayPalMessageView.Proxy @_Concurrency.MainActor(unsafe) final public var partnerAttributionID: Swift.String? {
+    get
+    set
+    _modify
+  }
+  @PayPalMessages.PayPalMessageView.Proxy @_Concurrency.MainActor(unsafe) final public var environment: PayPalMessages.Environment {
+    get
+    set
+    _modify
+  }
+  @PayPalMessages.PayPalMessageView.Proxy @_Concurrency.MainActor(unsafe) final public var amount: Swift.Double? {
+    get
+    set
+    _modify
+  }
+  @PayPalMessages.PayPalMessageView.Proxy @_Concurrency.MainActor(unsafe) final public var pageType: PayPalMessages.PayPalMessagePageType? {
+    get
+    set
+    _modify
+  }
+  @PayPalMessages.PayPalMessageView.Proxy @_Concurrency.MainActor(unsafe) final public var offerType: PayPalMessages.PayPalMessageOfferType? {
+    get
+    set
+    _modify
+  }
+  @PayPalMessages.PayPalMessageView.Proxy @_Concurrency.MainActor(unsafe) final public var buyerCountry: Swift.String? {
+    get
+    set
+    _modify
+  }
+  @PayPalMessages.PayPalMessageView.Proxy @_Concurrency.MainActor(unsafe) final public var channel: Swift.String {
+    get
+    set
+    _modify
+  }
+  @PayPalMessages.PayPalMessageView.Proxy @_Concurrency.MainActor(unsafe) final public var logoType: PayPalMessages.PayPalMessageLogoType {
+    get
+    set
+    _modify
+  }
+  @PayPalMessages.PayPalMessageView.Proxy @_Concurrency.MainActor(unsafe) final public var color: PayPalMessages.PayPalMessageColor {
+    get
+    set
+    _modify
+  }
+  @PayPalMessages.PayPalMessageView.Proxy @_Concurrency.MainActor(unsafe) final public var textAlign: PayPalMessages.PayPalMessageTextAlign {
+    get
+    set
+    _modify
+  }
+  @PayPalMessages.PayPalMessageView.Proxy @_Concurrency.MainActor(unsafe) final public var ignoreCache: Swift.Bool {
+    get
+    set
+    _modify
+  }
+  @_Concurrency.MainActor(unsafe) convenience public init(config: PayPalMessages.PayPalMessageConfig, stateDelegate: (any PayPalMessages.PayPalMessageViewStateDelegate)? = nil, eventDelegate: (any PayPalMessages.PayPalMessageViewEventDelegate)? = nil)
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) final public func setConfig(_ config: PayPalMessages.PayPalMessageConfig)
+  @_Concurrency.MainActor(unsafe) final public func getConfig() -> PayPalMessages.PayPalMessageConfig
+  @_Concurrency.MainActor(unsafe) @objc override final public var isHighlighted: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) @objc override final public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public func sizeThatFits(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+}
+extension PayPalMessages.PayPalMessageView {
+  @_Concurrency.MainActor(unsafe) @objc override final public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+}
+@available(iOS 13.0, *)
+extension PayPalMessages.PayPalMessageView {
+  public struct Representable : SwiftUI.UIViewRepresentable {
+    public init(config: PayPalMessages.PayPalMessageConfig, stateDelegate: (any PayPalMessages.PayPalMessageViewStateDelegate)? = nil, eventDelegate: (any PayPalMessages.PayPalMessageViewEventDelegate)? = nil)
+    @_Concurrency.MainActor(unsafe) public func makeUIView(context: PayPalMessages.PayPalMessageView.Representable.Context) -> PayPalMessages.PayPalMessageView
+    @_Concurrency.MainActor(unsafe) public func updateUIView(_ view: PayPalMessages.PayPalMessageView, context: PayPalMessages.PayPalMessageView.Representable.Context)
+    public typealias Body = Swift.Never
+    public typealias Coordinator = Swift.Void
+    public typealias UIViewType = PayPalMessages.PayPalMessageView
+  }
+}
+public enum PayPalMessageError : Swift.Error, Swift.Equatable {
+  case invalidURL
+  case invalidResponse(paypalDebugID: Swift.String? = nil, issue: Swift.String? = nil, description: Swift.String? = nil)
+  public var paypalDebugId: Swift.String? {
+    get
+  }
+  public var issue: Swift.String? {
+    get
+  }
+  public var description: Swift.String? {
+    get
+  }
+  public static func == (lhs: PayPalMessages.PayPalMessageError, rhs: PayPalMessages.PayPalMessageError) -> Swift.Bool
+}
+public enum PayPalMessageTextAlign : Swift.String, Swift.CaseIterable {
+  case left
+  case center
+  case right
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [PayPalMessages.PayPalMessageTextAlign]
+  public typealias RawValue = Swift.String
+  public static var allCases: [PayPalMessages.PayPalMessageTextAlign] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PayPalMessageOfferType : Swift.String, Swift.Decodable, Swift.CaseIterable {
+  case payLaterShortTerm
+  case payLaterLongTerm
+  case payLaterPayIn1
+  case payPalCreditNoInterest
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [PayPalMessages.PayPalMessageOfferType]
+  public typealias RawValue = Swift.String
+  public static var allCases: [PayPalMessages.PayPalMessageOfferType] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum Environment : Swift.Equatable {
+  case develop(host: Swift.String, devTouchpoint: Swift.Bool = false, stageTag: Swift.String? = nil)
+  case sandbox
+  case live
+  public var rawValue: Swift.String {
+    get
+  }
+  public var isProduction: Swift.Bool {
+    get
+  }
+  public var urlSession: Foundation.URLSession {
+    get
+  }
+  public static func == (a: PayPalMessages.Environment, b: PayPalMessages.Environment) -> Swift.Bool
+}
+public enum PayPalMessageLogoType : Swift.String, Swift.CaseIterable {
+  case inline
+  case primary
+  case alternative
+  case none
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [PayPalMessages.PayPalMessageLogoType]
+  public typealias RawValue = Swift.String
+  public static var allCases: [PayPalMessages.PayPalMessageLogoType] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PayPalMessagePageType : Swift.String, Swift.CaseIterable {
+  case home
+  case productListing
+  case productDetails
+  case cart
+  case miniCart
+  case checkout
+  case searchResults
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [PayPalMessages.PayPalMessagePageType]
+  public typealias RawValue = Swift.String
+  public static var allCases: [PayPalMessages.PayPalMessagePageType] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol PayPalMessageViewStateDelegate : AnyObject {
+  func onLoading(_ paypalMessageView: PayPalMessages.PayPalMessageView)
+  func onSuccess(_ paypalMessageView: PayPalMessages.PayPalMessageView)
+  func onError(_ paypalMessageView: PayPalMessages.PayPalMessageView, error: PayPalMessages.PayPalMessageError)
+}
+public protocol PayPalMessageViewEventDelegate : AnyObject {
+  func onClick(_ paypalMessageView: PayPalMessages.PayPalMessageView)
+  func onApply(_ paypalMessageView: PayPalMessages.PayPalMessageView)
+}
+public enum BuildInfo {
+  public static var version: Swift.String {
+    get
+  }
+  public static let integrationType: Swift.String
+  public static let channel: Swift.String
+}
+@propertyWrapper public struct AnyProxy<EnclosingType, Value> {
+  public typealias ValueKeyPath = Swift.ReferenceWritableKeyPath<EnclosingType, Value>
+  public typealias SelfKeyPath = Swift.ReferenceWritableKeyPath<EnclosingType, PayPalMessages.AnyProxy<EnclosingType, Value>>
+  public static subscript(_enclosingInstance instance: EnclosingType, wrapped wrappedKeyPath: PayPalMessages.AnyProxy<EnclosingType, Value>.ValueKeyPath, storage storageKeyPath: PayPalMessages.AnyProxy<EnclosingType, Value>.SelfKeyPath) -> Value {
+    get
+    set
+  }
+  @available(*, unavailable, message: "only works on instance properties of classes")
+  public var wrappedValue: Value {
+    get
+    set
+  }
+  public init(_ keyPath: PayPalMessages.AnyProxy<EnclosingType, Value>.ValueKeyPath)
+}
+public enum PayPalMessageColor : Swift.String, Swift.CaseIterable {
+  case black
+  case white
+  case monochrome
+  case grayscale
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [PayPalMessages.PayPalMessageColor]
+  public typealias RawValue = Swift.String
+  public static var allCases: [PayPalMessages.PayPalMessageColor] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc public class PayPalMessageData : ObjectiveC.NSObject {
+  public var clientID: Swift.String
+  public var merchantID: Swift.String?
+  public var partnerAttributionID: Swift.String?
+  public var environment: PayPalMessages.Environment
+  public var amount: Swift.Double?
+  public var pageType: PayPalMessages.PayPalMessagePageType?
+  public var offerType: PayPalMessages.PayPalMessageOfferType?
+  public var buyerCountry: Swift.String?
+  public var channel: Swift.String
+  public var ignoreCache: Swift.Bool
+  public init(clientID: Swift.String, environment: PayPalMessages.Environment, amount: Swift.Double? = nil, pageType: PayPalMessages.PayPalMessagePageType? = nil, offerType: PayPalMessages.PayPalMessageOfferType? = nil, channel: Swift.String = BuildInfo.channel)
+  public init(clientID: Swift.String, merchantID: Swift.String, environment: PayPalMessages.Environment, partnerAttributionID: Swift.String, amount: Swift.Double? = nil, pageType: PayPalMessages.PayPalMessagePageType? = nil, offerType: PayPalMessages.PayPalMessageOfferType? = nil, channel: Swift.String = BuildInfo.channel)
+  @objc deinit
+}
+@objc public class PayPalMessageStyle : ObjectiveC.NSObject {
+  public var logoType: PayPalMessages.PayPalMessageLogoType
+  public var color: PayPalMessages.PayPalMessageColor
+  public var textAlign: PayPalMessages.PayPalMessageTextAlign
+  public init(logoType: PayPalMessages.PayPalMessageLogoType = .inline, color: PayPalMessages.PayPalMessageColor = .black, textAlign: PayPalMessages.PayPalMessageTextAlign = .right)
+  @objc deinit
+}
+@objc public class PayPalMessageConfig : ObjectiveC.NSObject {
+  public var data: PayPalMessages.PayPalMessageData
+  public var style: PayPalMessages.PayPalMessageStyle
+  public init(data: PayPalMessages.PayPalMessageData, style: PayPalMessages.PayPalMessageStyle = PayPalMessageStyle())
+  @objc deinit
+  public static func setGlobalAnalytics(integrationName: Swift.String, integrationVersion: Swift.String)
+}
+extension PayPalMessages.PayPalMessageTextAlign : Swift.Equatable {}
+extension PayPalMessages.PayPalMessageTextAlign : Swift.Hashable {}
+extension PayPalMessages.PayPalMessageTextAlign : Swift.RawRepresentable {}
+extension PayPalMessages.PayPalMessageOfferType : Swift.Equatable {}
+extension PayPalMessages.PayPalMessageOfferType : Swift.Hashable {}
+extension PayPalMessages.PayPalMessageOfferType : Swift.RawRepresentable {}
+extension PayPalMessages.PayPalMessageLogoType : Swift.Equatable {}
+extension PayPalMessages.PayPalMessageLogoType : Swift.Hashable {}
+extension PayPalMessages.PayPalMessageLogoType : Swift.RawRepresentable {}
+extension PayPalMessages.PayPalMessagePageType : Swift.Equatable {}
+extension PayPalMessages.PayPalMessagePageType : Swift.Hashable {}
+extension PayPalMessages.PayPalMessagePageType : Swift.RawRepresentable {}
+extension PayPalMessages.PayPalMessageColor : Swift.Equatable {}
+extension PayPalMessages.PayPalMessageColor : Swift.Hashable {}
+extension PayPalMessages.PayPalMessageColor : Swift.RawRepresentable {}

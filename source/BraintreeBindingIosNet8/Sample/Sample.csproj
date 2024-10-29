@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0-ios</TargetFramework>
+		<OutputType>Exe</OutputType>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>true</ImplicitUsings>
+		<SupportedOSPlatformVersion>14.0</SupportedOSPlatformVersion>
+		<UseMauiEssentials>true</UseMauiEssentials>
+		<SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
+		<AssemblyName>biz.zipline.sample.braintreebinding</AssemblyName>
+		<ApplicationId>biz.zipline.sample.braintreebinding</ApplicationId>
+	</PropertyGroup>
+
+	<!-- With Xcode 16 upgrade comes a 'strip exited with code 139' error when creating device builds.  -->
+	<!-- The '_ExportSymbolsExplicitly' directive can be removed after Apple fixes the problem.         -->
+	<!-- See https://github.com/xamarin/xamarin-macios/issues/19157                                     -->
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net8.0-ios'">
+		<_ExportSymbolsExplicitly>false</_ExportSymbolsExplicitly>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+	  <CodesignKey>iPhone Developer</CodesignKey>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+	  <CodesignKey>iPhone Developer</CodesignKey>
+	</PropertyGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\Binding\Binding.csproj" />
+	</ItemGroup>
+</Project>
