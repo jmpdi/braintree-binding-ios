@@ -11,6 +11,13 @@
 		<ApplicationId>biz.zipline.sample.braintreebinding</ApplicationId>
 	</PropertyGroup>
 
+	<!-- SJM 241108 - Workaround for startup crash.                                          -->
+	<!-- .NET 8 does not handle Objective-C stub classes correctly.                          -->
+	<!-- See https://github.com/xamarin/xamarin-macios/issues/21546#issuecomment-2462833262  -->
+	<PropertyGroup>
+		<Registrar>dynamic</Registrar>
+	</PropertyGroup>
+	
 	<!-- With Xcode 16 upgrade comes a 'strip exited with code 139' error when creating device builds.  -->
 	<!-- The '_ExportSymbolsExplicitly' directive can be removed after Apple fixes the problem.         -->
 	<!-- See https://github.com/xamarin/xamarin-macios/issues/19157                                     -->
